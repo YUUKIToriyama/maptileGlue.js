@@ -3,6 +3,7 @@
 html {
 	font-size: 62.5%;
 }
+
 body {
 	font-size: 1.6em;
 }
@@ -20,22 +21,24 @@ header h1 {
 	line-height: 12px;
 	padding-left: 10px;
 }
+
 #menu-button {
 	float: right;
 	padding: 10px;
 }
 
-.menu-trigger,
-.menu-trigger span {
+.menu-trigger, .menu-trigger span {
 	display: inline-block;
 	transition: all .4s;
 	box-sizing: border-box;
 }
+
 .menu-trigger {
 	position: relative;
 	width: 35px;
 	height: 30px;
 }
+
 .menu-trigger span {
 	position: absolute;
 	left: 0;
@@ -44,35 +47,42 @@ header h1 {
 	background-color: #000000;
 	border-radius: 4px;
 }
+
 .menu-trigger span:nth-of-type(1) {
 	top: 0;
 }
+
 .menu-trigger span:nth-of-type(2) {
 	top: 13px;
 }
+
 .menu-trigger span:nth-of-type(3) {
 	bottom: 0;
 }
+
 .menu-trigger.active span:nth-of-type(1) {
 	transform: translateY(13px) rotate(-45deg);
 }
+
 .menu-trigger.active span:nth-of-type(2) {
 	left: 50%;
 	opacity: 0;
 	animation: active-menu-bar02 .8s forwards;
 }
+
 @keyframes active-menu-bar02 {
 	100% {
 		height: 0;
 	}
 }
+
 .menu-trigger.active span:nth-of-type(3) {
 	transform: translateY(-13px) rotate(45deg);
 }
 
 #menu {
 	position: fixed;
-	width: calc(100% - 100px);
+	width: calc(100% - 120px);
 	height: 100%;
 	background-color: rgba(50, 47, 45, 0.9);
 	top: 0;
@@ -81,18 +91,24 @@ header h1 {
 	transition: opacity 0.2s ease-out;
 	pointer-events: none;
 	z-index: 9999;
-	padding: 100px;
+	padding: 60px;
 	color: #FFFFFF;
 }
 
 #menu h1 {
 	font-size: 4rem;
 }
+
 #menu h2 {
 	font-size: 3rem;
 }
+
 #menu input, label {
 	font-size: 2rem;
+}
+
+section {
+	margin-bottom: 50px;
 }
 
 main {
