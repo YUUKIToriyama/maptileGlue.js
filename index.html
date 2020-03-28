@@ -8,7 +8,31 @@
 		<link rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
-		<div id="map"></div>
+		<header>
+			<h1>MaptileGlue</h1>
+			<div id="menu-button">
+				<a class="menu-trigger" href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>	
+			</div>
+
+		</header>
+		<main>
+			<div id="menu">
+				<h1>使い方</h1>
+				<h2>1. マップタイルを読み込ませます</h2>
+				<input type="text" name="maptileURL" id="maptileURL" value="https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png">
+				<input type="button" name="loadButton" id="loadButton" value="load">
+				<br>
+				<input type="checkbox" name="tms" id="tms">
+				<label for="tms">TMS形式を用いる</label>
+				<h2>2. 「地図を保存」ボタンを押します</h2>
+				<input type="button" name="saveButton" id="saveButton" value="地図を保存" disabled="true">
+			</div>
+			<div id="map"></div>
+		</main>
 	</body>
 	<script type="text/javascript" src="screenShot.js"></script>
 	<script type="text/javascript" src="main.js"></script>
