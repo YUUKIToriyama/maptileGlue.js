@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const MenuBar = () => {
-	const classes = makeStyles();
+	const classes = useStyles();
 
 	return (
 		<div className={classes.root}>
