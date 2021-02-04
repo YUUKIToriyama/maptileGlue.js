@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/home/runner/work/maptileGlue/maptileGlue/src/App.jsx"],
+  "sourcesContent": ["/* App.jsx */\n\nimport React from \"react\";\nimport { CssBaseline } from '@material-ui/core';\nimport MenuBar from \"./MenuBar\";\nimport MapView from \"./MapView\";\nimport ModalMenu from \"./ModalMenu\";\n\nconst App = () => {\n\tconst [tilelayer, setTilelayer] = React.useState(\"https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png\");\n\tconst [errorflag, setErrorflag] = React.useState(false);\n\n\treturn (\n\t\t<div>\n\t\t\t<CssBaseline />\n\t\t\t<MenuBar />\n\t\t\t<MapView tilelayer={tilelayer} setErrorflag={setErrorflag} />\n\t\t\t<ModalMenu setTilelayer={setTilelayer} errorflag={errorflag} setErrorflag={setErrorflag} />\n\t\t</div>\n\t)\n}\n\nexport default App;"],
+  "mappings": "AAEA;AACA;AACA;AACA;AACA;AAEA,MAAM,MAAM;AACX,QAAM,CAAC,WAAW,gBAAgB,MAAM,SAAS;AACjD,QAAM,CAAC,WAAW,gBAAgB,MAAM,SAAS;AAEjD,SACC,oCAAC,OAAD,MACC,oCAAC,aAAD,OACA,oCAAC,SAAD,OACA,oCAAC,SAAD;AAAA,IAAS;AAAA,IAAsB;AAAA,MAC/B,oCAAC,WAAD;AAAA,IAAW;AAAA,IAA4B;AAAA,IAAsB;AAAA;AAAA;AAKhE,eAAe;",
+  "names": []
+}

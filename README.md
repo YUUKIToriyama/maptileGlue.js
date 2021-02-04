@@ -1,2 +1,0 @@
-# maptileGlue
-gh-pages

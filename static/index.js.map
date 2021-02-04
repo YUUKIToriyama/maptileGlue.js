@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["/home/runner/work/maptileGlue/maptileGlue/src/index.jsx"],
+  "sourcesContent": ["/* index.jsx */\n\nimport React from \"react\";\nimport ReactDOM from \"react-dom\";\n\nimport App from \"./App\";\n\nReactDOM.render(<App />, document.getElementById(\"app\"));"],
+  "mappings": "AAEA;AACA;AAEA;AAEA,SAAS,OAAO,oCAAC,KAAD,OAAS,SAAS,eAAe;",
+  "names": []
+}
