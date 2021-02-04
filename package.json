@@ -1,0 +1,37 @@
+{
+  "name": "maptileglue",
+  "version": "1.0.0",
+  "description": "utility for leaflet users to save the displayed map as image file",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YUUKIToriyama/maptileGlue.git"
+  },
+  "keywords": [
+    "leaflet",
+    "maptile"
+  ],
+  "author": "YUUKIToriyama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YUUKIToriyama/maptileGlue/issues"
+  },
+  "homepage": "https://github.com/YUUKIToriyama/maptileGlue#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "snowpack": "^3.0.11"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "leaflet": "^1.7.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-github-btn": "^1.2.0"
+  }
+}
