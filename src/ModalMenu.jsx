@@ -61,7 +61,17 @@ const ModalMenu = (props) => {
 						マップタイルのURLを入力して読み込みボタンを押すと、表示される地図が変わります。
 					</DialogContentText>
 					<FormGroup row={true}>
-						<TextField id="maptileURL" label="URL" variant="outlined" onChange={(event) => setTextfieldValue(event.target.value)} />
+						<TextField
+							id="maptileURL"
+							label="URL"
+							variant="outlined"
+							onChange={(event) => {
+								setTextfieldValue(event.target.value);
+								props.setErrorflag(false);
+							}}
+							error={props.errorflag}
+							helperText={props.errorflag ? "入力値が不正です" : false}
+						/>
 						<Button variant="contained" color="primary" style={{ marginLeft: "10px" }} onClick={() => props.setTilelayer(textfieldValue)}>
 							読み込み
 						</Button>

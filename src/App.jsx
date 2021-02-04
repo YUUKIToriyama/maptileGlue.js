@@ -8,12 +8,14 @@ import ModalMenu from "./ModalMenu";
 
 const App = () => {
 	const [tilelayer, setTilelayer] = React.useState("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png");
+	const [errorflag, setErrorflag] = React.useState(false);
+
 	return (
 		<div>
 			<CssBaseline />
 			<MenuBar />
-			<MapView tilelayer={tilelayer} />
-			<ModalMenu setTilelayer={setTilelayer} />
+			<MapView tilelayer={tilelayer} setErrorflag={setErrorflag} />
+			<ModalMenu setTilelayer={setTilelayer} errorflag={errorflag} setErrorflag={setErrorflag} />
 		</div>
 	)
 }

@@ -42,8 +42,18 @@ class MapView extends React.Component {
 			this.baselayer = L.tileLayer(this.props.tilelayer);
 			this.layercontrol.addBaseLayer(this.baselayer, "hogehoge")
 			this.baselayer.addTo(this.map);
+			// baselayerのエラー処理
+			this.baselayer.on("tileerror", (event) => {
+				//alert("地図タイルが正しく読み込まれませんでした");
+				// todo
+				// textfieldをエラー表示にする
+				this.props.setErrorflag(true);
+			})
+
 		}
 	}
+
+
 
 	render() {
 		return (
