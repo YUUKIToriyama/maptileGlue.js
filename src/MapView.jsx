@@ -11,8 +11,6 @@ class MapView extends React.Component {
 		this.map;
 		// 初期状態で表示されているレイヤー
 		this.baselayer;
-		// ユーザーが追加して表示するレイヤー
-		this.overlayer;
 		// レイヤーコントロール
 		this.layercontrol;
 	}
@@ -28,7 +26,7 @@ class MapView extends React.Component {
 		this.baselayer.addTo(this.map);
 		this.layercontrol = L.control.layers({ "baselayer": this.baselayer }, {}, {
 			hideSingleBase: true,
-			collapsed: false
+			collapsed: false // 標準では非表示
 		});
 		this.layercontrol.addTo(this.map);
 	}
@@ -38,14 +36,12 @@ class MapView extends React.Component {
 		console.log(this.props.tilelayer);
 		if (this.props.tilelayer != prevProps.tilelayer) {
 			// 古いレイヤーを削除
-			if (this.overlayer != undefined) {
-				this.layercontrol.removeLayer(this.overlayer);
-				this.map.removeLayer(this.overlayer);
-			}
+			this.layercontrol.removeLayer(this.baselayer);
+			this.map.removeLayer(this.baselayer);
 			// 新しいレイヤーを作成
-			this.overlayer = L.tileLayer(this.props.tilelayer);
-			this.layercontrol.addOverlay(this.overlayer, "hogehoge")
-			this.overlayer.addTo(this.map);
+			this.baselayer = L.tileLayer(this.props.tilelayer);
+			this.layercontrol.addBaseLayer(this.baselayer, "hogehoge")
+			this.baselayer.addTo(this.map);
 		}
 	}
 
