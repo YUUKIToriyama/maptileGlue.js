@@ -17,6 +17,7 @@ import {
 	MenuItem
 } from "@material-ui/core";
 import EditIcon from '@material-ui/icons/Edit';
+import GitHubButton from "react-github-btn";
 
 import takeScreenshot from "./screenShot";
 
@@ -99,6 +100,7 @@ const ModalMenu = (props) => {
 							保存
 						</Button>
 					</FormGroup>
+					<GitHubButton href="https://github.com/YUUKIToriyama">Follow @YUUKIToriyama</GitHubButton>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose} color="primary" autoFocus>

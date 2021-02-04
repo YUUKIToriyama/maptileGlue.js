@@ -9,6 +9,7 @@ import {
 	IconButton
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import SideMenu from "./SideMenu";
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -23,20 +24,23 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const MenuBar = () => {
-	const classes = useStyles();
+	const sidemenuRef = React.useRef();
+	const [menuopen, setMenuopen] = React.useState(false);
 
+	const classes = useStyles();
 	return (
 		<div className={classes.root}>
 			<AppBar position="static">
 				<Toolbar>
 					<IconButton edge="start" className={classes.menuButton} color="inherit">
-						<MenuIcon />
+						<MenuIcon onClick={() => setMenuopen(true)} />
 					</IconButton>
 					<Typography variant="h6" className={classes.title}>
 						maptileGlue
 				</Typography>
 				</Toolbar>
 			</AppBar>
+			<SideMenu ref={sidemenuRef} menuopen={menuopen} setMenuopen={setMenuopen} />
 		</div>
 	)
 }
