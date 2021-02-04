@@ -18,6 +18,8 @@ import {
 } from "@material-ui/core";
 import EditIcon from '@material-ui/icons/Edit';
 
+import takeScreenshot from "./screenShot";
+
 const useStyles = makeStyles(() => ({
 	actionButton: {
 		position: 'fixed',
@@ -93,7 +95,7 @@ const ModalMenu = (props) => {
 							<MenuItem value="image/jpeg">JPEG</MenuItem>
 							<MenuItem value="image/png">PNG</MenuItem>
 						</Select>
-						<Button variant="contained" color="primary" style={{ marginLeft: "10px" }}>
+						<Button variant="contained" color="primary" style={{ marginLeft: "10px" }} onClick={() => takeScreenshot(filetype)}>
 							保存
 						</Button>
 					</FormGroup>

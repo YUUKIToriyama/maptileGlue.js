@@ -1,65 +1,53 @@
 /* screenShot.js */
+// Leaflet.jsで読み込んだ地図タイルをつなぎ合わせて一枚の画像にして保存します
+// タイルレイヤーがオプション「crossOrigin: true」のもと読み込まれていることが必要
+// (c)YUUKIToriyama All rights reserved.
 
-async function takeScreenshot() {
-	let canvasses = [];
-	// タイルレイヤーがオプション「crossOrigin: true」のもと読み込まれていることが必要
-	let layers = document.querySelectorAll(".leaflet-tile-container");
-	layers.forEach(layer => {
-		let tiles = layer.childNodes;
-		let imgURLs = {};
-		Array.from(tiles).map(x => [x.src.split(/[./]/).slice(-3).slice(0,2), x]).sort().forEach(image => {
-			let x = image[0][0];
-			if (!(imgURLs.hasOwnProperty(x))) {
-				imgURLs[x] = [];
-			}
-			imgURLs[x].push(image[1]);
-		})
-		//console.log(imgURLs);
-	
-		let canvas = document.createElement("canvas");
-		let w = Object.keys(imgURLs).length
-		let h = tiles.length / w;
-		canvas.width = w * 256;
-		canvas.height = h * 256;
-	
-		let context = canvas.getContext("2d");
-		let dx = 0;
-		for (let [x,images] of Object.entries(imgURLs)) {
-			let dy = 0;
-			images.forEach(image => {
-				context.drawImage(image, 256*dx, 256*dy);
-				dy = dy + 1;
-			})
-			dx = dx + 1;
+const takeScreenshot = async (filetype) => {
+	// DOMを直接参照し、タイル画像のダウンロード元を調べる
+	let layerNode = document.querySelector(".leaflet-tile-container");
+	let tileNodes = layerNode.childNodes;
+
+	// タイル画像のURLを抜き出し、それらを順序よくならべる
+	let tileImgs = {};
+	Array.from(tileNodes).map(tileNode => {
+		return [tileNode.src.split(/[./]/).slice(-3).slice(0, 2), tileNode]
+	}).sort().forEach(([position, tileImg]) => {
+		let x = position[0];
+		if (!(tileImgs.hasOwnProperty(x))) {
+			tileImgs[x] = [];
 		}
-		canvasses.push(canvas);
+		tileImgs[x].push(tileImg);
 	})
+	console.log(tileImgs);
 
-	/*
-	// レイヤーごとに生成したキャプチャーを透明度を適用しながら一枚に合成する
-	let context = canvasses[0].getContext("2d");
-	for (let m = 1; m < canvasses.length - 1; m++) {
-		let opacity = parseFloat(document.getElementById(`slider-${m}`).value) / 10;
-		console.log(opacity);
-		let ctx = canvasses[m].getContext("2d");
-		ctx.globalAlpha = opacity;
-		let img = await loadImage(ctx.canvas.toDataURL("image/png"));
-		context.drawImage(img, 0, 0);
-	}
+	// キャンバスを用意し、タイル画像を敷き詰めていく
+	let canvas = document.createElement("canvas");
+	let w = Object.keys(tileImgs).length
+	let h = tileNodes.length / w;
+	canvas.width = w * 256;
+	canvas.height = h * 256;
 
-	function loadImage(url) {
-		return new Promise(resolve => {
-			let img = new Image();
-			img.src = url;
-			img.addEventListener("load", () => {
-				resolve(img);
-			})
+	let context = canvas.getContext("2d");
+	let dx = 0;
+	for (let [x, images] of Object.entries(tileImgs)) {
+		let dy = 0;
+		images.forEach(image => {
+			context.drawImage(image, 256 * dx, 256 * dy);
+			dy = dy + 1;
 		})
+		dx = dx + 1;
 	}
-	*/
 
+	// キャンバスを画像に保存
 	var a = document.createElement("a");
-	a.href = await canvasses[0].toDataURL("image/png");
-	a.download = "download.png";
+	a.href = await canvas.toDataURL(filetype);
+	if (filetype == "image/jpeg") {
+		a.download = "download.jpg"
+	} else {
+		a.download = "download.png"
+	}
 	a.click();
 }
+
+export default takeScreenshot;

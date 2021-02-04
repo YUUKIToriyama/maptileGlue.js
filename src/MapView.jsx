@@ -39,7 +39,9 @@ class MapView extends React.Component {
 			this.layercontrol.removeLayer(this.baselayer);
 			this.map.removeLayer(this.baselayer);
 			// 新しいレイヤーを作成
-			this.baselayer = L.tileLayer(this.props.tilelayer);
+			this.baselayer = L.tileLayer(this.props.tilelayer, {
+				crossOrigin: true
+			});
 			this.layercontrol.addBaseLayer(this.baselayer, "hogehoge")
 			this.baselayer.addTo(this.map);
 			// baselayerのエラー処理
