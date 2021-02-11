@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build",
+    "build": "snowpack build && workbox generateSW workbox.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +24,8 @@
   "homepage": "https://github.com/YUUKIToriyama/maptileGlue#readme",
   "devDependencies": {
     "jest": "^26.6.3",
-    "snowpack": "^3.0.11"
+    "snowpack": "^3.0.11",
+    "workbox-cli": "^6.1.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
