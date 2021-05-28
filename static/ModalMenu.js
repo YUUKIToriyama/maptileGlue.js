@@ -50,9 +50,9 @@ const ModalMenu = (props) => {
     id: "alert-dialog-title"
   }, "How to use"), /* @__PURE__ */ React.createElement(DialogContent, null, /* @__PURE__ */ React.createElement(Typography, {
     variant: "h5"
-  }, "1. \u30DE\u30C3\u30D7\u30BF\u30A4\u30EB\u3092\u8AAD\u307F\u8FBC\u3080"), /* @__PURE__ */ React.createElement(DialogContentText, {
+  }, "1. マップタイルを読み込む"), /* @__PURE__ */ React.createElement(DialogContentText, {
     id: "description-for-loading-maptile"
-  }, "\u30DE\u30C3\u30D7\u30BF\u30A4\u30EB\u306EURL\u3092\u5165\u529B\u3057\u3066\u8AAD\u307F\u8FBC\u307F\u30DC\u30BF\u30F3\u3092\u62BC\u3059\u3068\u3001\u8868\u793A\u3055\u308C\u308B\u5730\u56F3\u304C\u5909\u308F\u308A\u307E\u3059\u3002"), /* @__PURE__ */ React.createElement(FormGroup, {
+  }, "マップタイルのURLを入力して読み込みボタンを押すと、表示される地図が変わります。"), /* @__PURE__ */ React.createElement(FormGroup, {
     row: true
   }, /* @__PURE__ */ React.createElement(TextField, {
     id: "maptileURL",
@@ -63,17 +63,17 @@ const ModalMenu = (props) => {
       props.setErrorflag(false);
     },
     error: props.errorflag,
-    helperText: props.errorflag ? "\u5165\u529B\u5024\u304C\u4E0D\u6B63\u3067\u3059" : false
+    helperText: props.errorflag ? "入力値が不正です" : false
   }), /* @__PURE__ */ React.createElement(Button, {
     variant: "contained",
     color: "primary",
     style: {marginLeft: "10px"},
     onClick: () => props.setTilelayer(textfieldValue)
-  }, "\u8AAD\u307F\u8FBC\u307F")), /* @__PURE__ */ React.createElement(Typography, {
+  }, "読み込み")), /* @__PURE__ */ React.createElement(Typography, {
     variant: "h5"
-  }, "2. \u5730\u56F3\u3092\u753B\u50CF\u30D5\u30A1\u30A4\u30EB\u3068\u3057\u3066\u4FDD\u5B58\u3059\u308B"), /* @__PURE__ */ React.createElement(DialogContentText, {
+  }, "2. 地図を画像ファイルとして保存する"), /* @__PURE__ */ React.createElement(DialogContentText, {
     id: "description-for-saving-image"
-  }, "\u4FDD\u5B58\u30DC\u30BF\u30F3\u3092\u62BC\u3059\u3068\u753B\u50CF\u30D5\u30A1\u30A4\u30EB\u3092\u4FDD\u5B58\u3067\u304D\u307E\u3059\u3002"), /* @__PURE__ */ React.createElement(FormGroup, {
+  }, "保存ボタンを押すと画像ファイルを保存できます。"), /* @__PURE__ */ React.createElement(FormGroup, {
     row: true
   }, /* @__PURE__ */ React.createElement(Select, {
     variant: "outlined",
@@ -94,13 +94,13 @@ const ModalMenu = (props) => {
     color: "primary",
     style: {marginLeft: "10px"},
     onClick: () => takeScreenshot(filetype)
-  }, "\u4FDD\u5B58")), /* @__PURE__ */ React.createElement(GitHubButton, {
+  }, "保存")), /* @__PURE__ */ React.createElement(GitHubButton, {
     href: "https://github.com/YUUKIToriyama"
   }, "Follow @YUUKIToriyama")), /* @__PURE__ */ React.createElement(DialogActions, null, /* @__PURE__ */ React.createElement(Button, {
     onClick: handleClose,
     color: "primary",
     autoFocus: true
-  }, "\u9589\u3058\u308B"))));
+  }, "閉じる"))));
 };
 export default ModalMenu;
-//# sourceMappingURL=ModalMenu.js.map
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2hvbWUvcnVubmVyL3dvcmsvbWFwdGlsZUdsdWUvbWFwdGlsZUdsdWUvc3JjL01vZGFsTWVudS5qc3giXSwKICAibWFwcGluZ3MiOiAiQUFFQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQWNBO0FBQ0E7QUFFQTtBQUVBLE1BQU0sWUFBWSxXQUFXLE1BQU87QUFBQSxFQUNuQyxjQUFjO0FBQUEsSUFDYixVQUFVO0FBQUEsSUFDVixRQUFRO0FBQUEsSUFDUixRQUFRO0FBQUEsSUFDUixPQUFPO0FBQUE7QUFBQTtBQUlULE1BQU0sWUFBWSxDQUFDLFVBQVU7QUFDNUIsUUFBTSxVQUFVO0FBQ2hCLFFBQU0sQ0FBQyxNQUFNLFdBQVcsTUFBTSxTQUFTO0FBQ3ZDLFFBQU0sQ0FBQyxnQkFBZ0IscUJBQXFCLE1BQU0sU0FBUztBQUMzRCxRQUFNLENBQUMsVUFBVSxlQUFlLE1BQU0sU0FBUztBQUUvQyxRQUFNLGtCQUFrQixNQUFNO0FBQzdCLFlBQVE7QUFBQTtBQUdULFFBQU0sY0FBYyxNQUFNO0FBQ3pCLFlBQVE7QUFBQTtBQUdULFNBQ0Msb0NBQUMsT0FBRCxNQUNDLG9DQUFDLEtBQUQ7QUFBQSxJQUFLLE9BQU07QUFBQSxJQUFVLGNBQVc7QUFBQSxJQUFhLFNBQVM7QUFBQSxJQUFpQixXQUFXLFFBQVE7QUFBQSxLQUN6RixvQ0FBQyxVQUFELFFBRUQsb0NBQUMsUUFBRDtBQUFBLElBQ0M7QUFBQSxJQUNBLFNBQVM7QUFBQSxJQUNULG1CQUFnQjtBQUFBLElBQ2hCLG9CQUFpQjtBQUFBLEtBRWpCLG9DQUFDLGFBQUQ7QUFBQSxJQUFhLElBQUc7QUFBQSxLQUFxQixlQUdyQyxvQ0FBQyxlQUFELE1BQ0Msb0NBQUMsWUFBRDtBQUFBLElBQVksU0FBUTtBQUFBLEtBQUssbUJBQ3pCLG9DQUFDLG1CQUFEO0FBQUEsSUFBbUIsSUFBRztBQUFBLEtBQWtDLDhDQUd4RCxvQ0FBQyxXQUFEO0FBQUEsSUFBVyxLQUFLO0FBQUEsS0FDZixvQ0FBQyxXQUFEO0FBQUEsSUFDQyxJQUFHO0FBQUEsSUFDSCxPQUFNO0FBQUEsSUFDTixTQUFRO0FBQUEsSUFDUixVQUFVLENBQUMsVUFBVTtBQUNwQix3QkFBa0IsTUFBTSxPQUFPO0FBQy9CLFlBQU0sYUFBYTtBQUFBO0FBQUEsSUFFcEIsT0FBTyxNQUFNO0FBQUEsSUFDYixZQUFZLE1BQU0sWUFBWSxhQUFhO0FBQUEsTUFFNUMsb0NBQUMsUUFBRDtBQUFBLElBQVEsU0FBUTtBQUFBLElBQVksT0FBTTtBQUFBLElBQVUsT0FBTyxDQUFFLFlBQVk7QUFBQSxJQUFVLFNBQVMsTUFBTSxNQUFNLGFBQWE7QUFBQSxLQUFpQixVQUkvSCxvQ0FBQyxZQUFEO0FBQUEsSUFBWSxTQUFRO0FBQUEsS0FBSyx3QkFDekIsb0NBQUMsbUJBQUQ7QUFBQSxJQUFtQixJQUFHO0FBQUEsS0FBK0IsNEJBR3JELG9DQUFDLFdBQUQ7QUFBQSxJQUFXLEtBQUs7QUFBQSxLQUNmLG9DQUFDLFFBQUQ7QUFBQSxJQUNDLFNBQVE7QUFBQSxJQUNSLE9BQU87QUFBQSxJQUNQLFVBQVUsQ0FBQyxVQUFVO0FBQUUsa0JBQVksTUFBTSxPQUFPO0FBQUE7QUFBQSxJQUNoRCxZQUFZO0FBQUEsTUFDWCxNQUFNO0FBQUEsTUFDTixJQUFJO0FBQUE7QUFBQSxLQUdMLG9DQUFDLFVBQUQ7QUFBQSxJQUFVLE9BQU07QUFBQSxLQUFhLFNBQzdCLG9DQUFDLFVBQUQ7QUFBQSxJQUFVLE9BQU07QUFBQSxLQUFZLFNBRTdCLG9DQUFDLFFBQUQ7QUFBQSxJQUFRLFNBQVE7QUFBQSxJQUFZLE9BQU07QUFBQSxJQUFVLE9BQU8sQ0FBRSxZQUFZO0FBQUEsSUFBVSxTQUFTLE1BQU0sZUFBZTtBQUFBLEtBQVcsUUFJckgsb0NBQUMsY0FBRDtBQUFBLElBQWMsTUFBSztBQUFBLEtBQW1DLDJCQUV2RCxvQ0FBQyxlQUFELE1BQ0Msb0NBQUMsUUFBRDtBQUFBLElBQVEsU0FBUztBQUFBLElBQWEsT0FBTTtBQUFBLElBQVUsV0FBUztBQUFBLEtBQUM7QUFBQTtBQVE3RCxlQUFlOyIsCiAgIm5hbWVzIjogW10KfQo=

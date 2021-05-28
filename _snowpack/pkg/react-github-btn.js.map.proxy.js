@@ -1,1 +1,0 @@
-export default "/_snowpack/pkg/react-github-btn.js.map";

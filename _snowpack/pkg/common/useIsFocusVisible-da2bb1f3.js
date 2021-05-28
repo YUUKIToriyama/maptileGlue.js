@@ -1,5 +1,5 @@
-import { r as react } from './index-57a74e37.js';
-import { r as reactDom } from './index-8dbeb7e4.js';
+import { r as react } from './index-04edb6a1.js';
+import { r as reactDom } from './index-3eae4d6e.js';
 
 /**
  * Safe chained function
@@ -85,9 +85,9 @@ function setRef(ref, value) {
 /* eslint-disable react-hooks/rules-of-hooks, react-hooks/exhaustive-deps */
 function useControlled(_ref) {
   var controlled = _ref.controlled,
-      defaultProp = _ref.default;
-      _ref.name;
-      _ref.state;
+      defaultProp = _ref.default,
+      name = _ref.name,
+      _ref$state = _ref.state;
 
   var _React$useRef = react.useRef(controlled !== undefined),
       isControlled = _React$useRef.current;
@@ -284,4 +284,4 @@ function useIsFocusVisible() {
 }
 
 export { useIsFocusVisible as a, useForkRef as b, ownerWindow as c, createChainedFunction as d, debounce as e, useControlled as f, isMuiElement as i, ownerDocument as o, setRef as s, useEventCallback as u };
-//# sourceMappingURL=useIsFocusVisible-079942da.js.map
+//# sourceMappingURL=useIsFocusVisible-da2bb1f3.js.map
