@@ -1,6 +1,6 @@
 import { c as createCommonjsModule } from './_commonjsHelpers-8c19dec8.js';
 
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -58,4 +58,4 @@ function _classCallCheck(instance, Constructor) {
 }
 
 export { _classCallCheck as _, reactIs as r };
-//# sourceMappingURL=classCallCheck-3ce0c2da.js.map
+//# sourceMappingURL=classCallCheck-c667815b.js.map

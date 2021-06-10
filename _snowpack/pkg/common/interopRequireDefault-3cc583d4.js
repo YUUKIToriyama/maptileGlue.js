@@ -8,7 +8,8 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 });
 
 export { interopRequireDefault as i };
-//# sourceMappingURL=interopRequireDefault-8316f346.js.map
+//# sourceMappingURL=interopRequireDefault-3cc583d4.js.map

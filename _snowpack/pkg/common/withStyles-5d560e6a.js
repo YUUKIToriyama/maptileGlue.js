@@ -227,7 +227,7 @@ function _arrayWithoutHoles(arr) {
 }
 
 function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 function _unsupportedIterableToArray(o, minLen) {
@@ -325,14 +325,17 @@ function _arrayWithHoles(arr) {
 }
 
 function _iterableToArrayLimit(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+
+  if (_i == null) return;
   var _arr = [];
   var _n = true;
   var _d = false;
-  var _e = undefined;
+
+  var _s, _e;
 
   try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
       _arr.push(_s.value);
 
       if (i && _arr.length === i) break;
@@ -592,10 +595,19 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
+  _setPrototypeOf(subClass, superClass);
 }
 
 function _assertThisInitialized(self) {
@@ -4749,4 +4761,4 @@ var withStyles = function withStyles(stylesOrCreator) {
 };
 
 export { nested as A, jssPreset as B, sheetsManager as C, StylesContext as D, SheetsRegistry as S, ThemeContext as T, _inheritsLoose as _, _objectWithoutPropertiesLoose as a, _assertThisInitialized as b, _extends as c, _objectWithoutProperties as d, clsx as e, _toConsumableArray as f, _slicedToArray as g, _createClass as h, getThemeProps as i, _defineProperty as j, formatMuiErrorMessage as k, _typeof as l, mergeClasses as m, deepmerge as n, createUnarySpacing as o, propTypes as p, handleBreakpoints as q, merge as r, breakpoints as s, spacing as t, useTheme as u, createGenerateClassName as v, withStyles as w, StylesProvider as x, makeStyles as y, hoistNonReactStatics_cjs as z };
-//# sourceMappingURL=withStyles-f12a2dd7.js.map
+//# sourceMappingURL=withStyles-5d560e6a.js.map

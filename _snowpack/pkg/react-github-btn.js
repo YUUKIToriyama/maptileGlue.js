@@ -25,7 +25,7 @@ class GitHubButton extends react.PureComponent {
   }
   paint () {
     const _ = this.$.current.appendChild(document.createElement('span'));
-    import(/* webpackMode: "eager" */ './common/buttons.esm-76ca0cd6.js').then(({ render }) => {
+    import(/* webpackMode: "eager" */ './common/buttons.esm-9a530c44.js').then(({ render }) => {
       render(_.appendChild(this._.current), function (el) {
         try {
           _.parentNode.replaceChild(el, _);
