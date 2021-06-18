@@ -24,7 +24,7 @@
   "homepage": "https://github.com/YUUKIToriyama/maptileGlue#readme",
   "devDependencies": {
     "jest": "^27.0.4",
-    "snowpack": "^3.5.6",
+    "snowpack": "^3.5.9",
     "workbox-cli": "^6.1.5"
   },
   "dependencies": {
