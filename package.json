@@ -1,11 +1,13 @@
 {
   "name": "maptileglue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utility for leaflet users to save the displayed map as image file",
   "main": "src/index.jsx",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build && workbox generateSW workbox.config.js",
+    "clean": "rm -rf build",
+    "generateSW": "workbox generateSW workbox.config.js",
+    "build": "npm run clean && snowpack build && npm run generateSW",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
