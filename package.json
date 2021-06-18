@@ -2,7 +2,7 @@
   "name": "maptileglue",
   "version": "1.0.0",
   "description": "utility for leaflet users to save the displayed map as image file",
-  "main": "index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build && workbox generateSW workbox.config.js",
@@ -16,8 +16,8 @@
     "leaflet",
     "maptile"
   ],
-  "author": "YUUKIToriyama",
-  "license": "ISC",
+  "author": "YUUKIToriyama<github@toriyama.dev>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/YUUKIToriyama/maptileGlue/issues"
   },
