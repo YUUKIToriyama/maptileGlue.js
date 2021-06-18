@@ -19,7 +19,8 @@ import {
 import EditIcon from '@material-ui/icons/Edit';
 import GitHubButton from "react-github-btn";
 
-import takeScreenshot from "./screenShot";
+//import takeScreenshot from "./screenShot";
+import takeScreenshot from "leaflet.patchwork";
 
 const useStyles = makeStyles(() => ({
 	actionButton: {
