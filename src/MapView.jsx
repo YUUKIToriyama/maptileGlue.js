@@ -51,11 +51,8 @@ class MapView extends React.Component {
 				// textfieldをエラー表示にする
 				this.props.setErrorflag(true);
 			})
-
 		}
 	}
-
-
 
 	render() {
 		return (

@@ -19,7 +19,8 @@ import {
 import EditIcon from '@material-ui/icons/Edit';
 import GitHubButton from "react-github-btn";
 
-import takeScreenshot from "./screenShot";
+//import takeScreenshot from "./screenShot";
+import takeScreenshot from "leaflet.patchwork";
 
 const useStyles = makeStyles(() => ({
 	actionButton: {
@@ -45,7 +46,7 @@ const ModalMenu = (props) => {
 	};
 
 	return (
-		<div>
+		<React.Fragment>
 			<Fab color="primary" aria-label="open modal" onClick={handleClickOpen} className={classes.actionButton}>
 				<EditIcon />
 			</Fab>
@@ -108,7 +109,7 @@ const ModalMenu = (props) => {
 					</Button>
 				</DialogActions>
 			</Dialog>
-		</div>
+		</React.Fragment>
 	);
 }
 export default ModalMenu;

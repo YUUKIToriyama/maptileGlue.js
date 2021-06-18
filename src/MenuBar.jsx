@@ -4,6 +4,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
 	AppBar,
+	Link,
 	Badge,
 	Button,
 	Toolbar,
@@ -65,8 +66,9 @@ const MenuBar = () => {
 						<DialogTitle id="notification-dialog-title">お知らせ</DialogTitle>
 						<DialogContent>
 							<DialogContentText id="notification-dialog-content">
-								maptileGlueがリリースされました！感想・プルリクお待ちしております！
-          					</DialogContentText>
+								コア部分を<Link href="https://github.com/Cocon/Leaflet.patchwork">Cocon/Leaflet.patchwork</Link>として切り出し公開しました！
+								まだプレリリースですがご自身のサイトに導入して使ってみてください！
+							</DialogContentText>
 						</DialogContent>
 						<DialogActions>
 							<Button
@@ -76,7 +78,7 @@ const MenuBar = () => {
 								}}
 								color="primary">
 								閉じる
-        					</Button>
+							</Button>
 						</DialogActions>
 					</Dialog>
 				</Toolbar>
