@@ -5,6 +5,7 @@
     "@material-ui/icons": "./@material-ui/icons.js",
     "@material-ui/icons/Edit": "./@material-ui/icons/Edit.js",
     "leaflet": "./leaflet.js",
+    "leaflet.patchwork": "./leaflet.patchwork.js",
     "leaflet/dist/leaflet.css": "./leaflet/dist/leaflet.css",
     "react": "./react.js",
     "react-dom": "./react-dom.js",

@@ -325,7 +325,7 @@ function _arrayWithHoles(arr) {
 }
 
 function _iterableToArrayLimit(arr, i) {
-  var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
 
   if (_i == null) return;
   var _arr = [];
@@ -4761,4 +4761,4 @@ var withStyles = function withStyles(stylesOrCreator) {
 };
 
 export { nested as A, jssPreset as B, sheetsManager as C, StylesContext as D, SheetsRegistry as S, ThemeContext as T, _inheritsLoose as _, _objectWithoutPropertiesLoose as a, _assertThisInitialized as b, _extends as c, _objectWithoutProperties as d, clsx as e, _toConsumableArray as f, _slicedToArray as g, _createClass as h, getThemeProps as i, _defineProperty as j, formatMuiErrorMessage as k, _typeof as l, mergeClasses as m, deepmerge as n, createUnarySpacing as o, propTypes as p, handleBreakpoints as q, merge as r, breakpoints as s, spacing as t, useTheme as u, createGenerateClassName as v, withStyles as w, StylesProvider as x, makeStyles as y, hoistNonReactStatics_cjs as z };
-//# sourceMappingURL=withStyles-5d560e6a.js.map
+//# sourceMappingURL=withStyles-d9b0896d.js.map
