@@ -1,6 +1,6 @@
 {
   "name": "maptileglue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "utility for leaflet users to save the displayed map as image file",
   "main": "src/index.jsx",
   "scripts": {
