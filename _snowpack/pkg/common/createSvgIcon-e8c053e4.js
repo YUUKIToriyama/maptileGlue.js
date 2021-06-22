@@ -1,4 +1,4 @@
-import { k as formatMuiErrorMessage, d as _objectWithoutProperties, c as _extends, j as _defineProperty, n as deepmerge, o as createUnarySpacing, w as withStyles$1, e as clsx } from './withStyles-d9b0896d.js';
+import { k as formatMuiErrorMessage, d as _objectWithoutProperties, c as _extends, j as _defineProperty, n as deepmerge, o as createUnarySpacing, w as withStyles$1, e as clsx } from './withStyles-96eae16f.js';
 import { r as react } from './index-04edb6a1.js';
 
 var common = {
@@ -164,6 +164,32 @@ function hexToRgb(color) {
     return index < 3 ? parseInt(n, 16) : Math.round(parseInt(n, 16) / 255 * 1000) / 1000;
   }).join(', '), ")") : '';
 }
+
+function intToHex(int) {
+  var hex = int.toString(16);
+  return hex.length === 1 ? "0".concat(hex) : hex;
+}
+/**
+ * Converts a color from CSS rgb format to CSS hex format.
+ *
+ * @param {string} color - RGB color, i.e. rgb(n, n, n)
+ * @returns {string} A CSS rgb color string, i.e. #nnnnnn
+ */
+
+
+function rgbToHex(color) {
+  // Idempotent
+  if (color.indexOf('#') === 0) {
+    return color;
+  }
+
+  var _decomposeColor = decomposeColor(color),
+      values = _decomposeColor.values;
+
+  return "#".concat(values.map(function (n) {
+    return intToHex(n);
+  }).join(''));
+}
 /**
  * Converts a color from hsl format to rgb format.
  *
@@ -293,6 +319,19 @@ function getLuminance(color) {
   }); // Truncate at 3 digits
 
   return Number((0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]).toFixed(3));
+}
+/**
+ * Darken or lighten a color, depending on its luminance.
+ * Light colors are darkened, dark colors are lightened.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {number} coefficient=0.15 - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+
+function emphasize(color) {
+  var coefficient = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.15;
+  return getLuminance(color) > 0.5 ? darken(color, coefficient) : lighten(color, coefficient);
 }
 /**
  * Set the absolute transparency of a color.
@@ -1068,5 +1107,5 @@ function createSvgIcon(path, displayName) {
   return /*#__PURE__*/react.memo( /*#__PURE__*/react.forwardRef(Component));
 }
 
-export { duration as a, createSvgIcon as b, capitalize as c, defaultTheme as d, fade as f, withStyles as w, zIndex as z };
-//# sourceMappingURL=createSvgIcon-b1019d9f.js.map
+export { getLuminance as A, easing as B, SvgIcon$1 as S, duration as a, createSvgIcon as b, capitalize as c, defaultTheme as d, common as e, fade as f, blue as g, green as h, indigo as i, grey as j, createMuiTheme as k, emphasize as l, keys as m, lighten as n, orange as o, pink as p, darken as q, red as r, hexToRgb as s, rgbToHex as t, hslToRgb as u, decomposeColor as v, withStyles as w, recomposeColor as x, getContrastRatio as y, zIndex as z };
+//# sourceMappingURL=createSvgIcon-e8c053e4.js.map
