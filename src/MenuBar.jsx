@@ -16,8 +16,35 @@ import {
 	DialogContentText,
 	DialogActions
 } from "@material-ui/core";
-import { Menu, Notifications } from "@material-ui/icons";
-import SideMenu from "./SideMenu";
+import {
+	Help,
+	GitHub,
+	EmojiPeople,
+	Menu,
+	Notifications
+} from '@material-ui/icons';
+import { SideMenu } from 'materialui-component-collection';
+
+const sideMenuItems = [
+	{
+		href: "https://github.com/YUUKIToriyama/maptileGlue",
+		name: "GitHub",
+		icon: GitHub,
+		text: "View Source Code"
+	},
+	{
+		href: "https://github.com/YUUKIToriyama",
+		name: "Author",
+		icon: EmojiPeople,
+		text: "About Author"
+	},
+	{
+		href: "#",
+		name: "Help",
+		icon: Help,
+		text: "Show Help"
+	}
+];
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -29,11 +56,10 @@ const useStyles = makeStyles(theme => ({
 	title: {
 		flexGrow: 1,
 	},
-}))
+}));
 
 const MenuBar = () => {
-	const sidemenuRef = React.useRef();
-	const [menuopen, setMenuopen] = React.useState(false);
+	const [menuOpen, setMenuOpen] = React.useState(false);
 	const [notificationOpen, setNotificationOpen] = React.useState(false);
 	const [numBadge, setNumBadge] = React.useState(1);
 
@@ -43,7 +69,7 @@ const MenuBar = () => {
 			<AppBar position="static">
 				<Toolbar>
 					<IconButton edge="start" className={classes.menuButton} color="inherit">
-						<Menu onClick={() => setMenuopen(true)} />
+						<Menu onClick={() => setMenuOpen(true)} />
 					</IconButton>
 					<Typography variant="h6" className={classes.title}>
 						maptileGlue
@@ -83,7 +109,10 @@ const MenuBar = () => {
 					</Dialog>
 				</Toolbar>
 			</AppBar>
-			<SideMenu ref={sidemenuRef} menuopen={menuopen} setMenuopen={setMenuopen} />
+			<SideMenu
+				state={[menuOpen, setMenuOpen]}
+				items={sideMenuItems}
+			/>
 		</div>
 	)
 }
