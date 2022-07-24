@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>MaptileGlue | マップタイルをjpegで保存できます</title>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-		<link rel="manifest" href="webmanifest.json"/>
-		<script type="text/javascript">
-			if ("serviceWorker" in navigator) {
-				window.addEventListener("load", () => {
-					navigator.serviceWorker.register("sw.js");
-				})
-			}
-		</script>
-	</head>
-	<body>
-		<div id="app"></div>
-		<script type="module" src="./static/index.js"></script>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaptileGlue | マップタイルをjpegで保存できます</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="manifest" href="webmanifest.json" />
+    <script type="text/javascript">
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js");
+            })
+        }
+    </script>
+<script defer src="main.js"></script></head>
+
+<body>
+    <div id="app"></div>
+    <script type="module" src="./main.js"></script>
+</body>
+
 </html>
