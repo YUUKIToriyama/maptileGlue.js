@@ -1,42 +1,51 @@
 {
-  "name": "maptileglue",
-  "version": "1.0.2",
-  "description": "utility for leaflet users to save the displayed map as image file",
-  "main": "src/index.jsx",
-  "scripts": {
-    "start": "snowpack dev",
-    "clean": "rm -rf build",
-    "generateSW": "workbox generateSW workbox.config.js",
-    "build": "npm run clean && snowpack build && npm run generateSW",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YUUKIToriyama/maptileGlue.git"
-  },
-  "keywords": [
-    "leaflet",
-    "maptile"
-  ],
-  "author": "YUUKIToriyama<github@toriyama.dev>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/YUUKIToriyama/maptileGlue/issues"
-  },
-  "homepage": "https://github.com/YUUKIToriyama/maptileGlue#readme",
-  "devDependencies": {
-    "jest": "^27.0.4",
-    "snowpack": "^3.5.9",
-    "workbox-cli": "^6.1.5"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "leaflet": "^1.7.1",
-    "leaflet.patchwork": "^0.9.0",
-    "materialui-component-collection": "^0.9.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-github-btn": "^1.2.0"
-  }
+    "name": "maptileglue",
+    "version": "1.0.2",
+    "description": "utility for leaflet users to save the displayed map as image file",
+    "main": "src/index.jsx",
+    "scripts": {
+        "start": "webpack serve",
+        "clean": "rm -rf build",
+        "generateSW": "workbox generateSW workbox.config.js",
+        "build": "npm run clean && webpack && npm run generateSW",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YUUKIToriyama/maptileGlue.git"
+    },
+    "keywords": [
+        "leaflet",
+        "maptile"
+    ],
+    "author": "YUUKIToriyama<github@toriyama.dev>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/YUUKIToriyama/maptileGlue/issues"
+    },
+    "homepage": "https://github.com/YUUKIToriyama/maptileGlue#readme",
+    "devDependencies": {
+        "@babel/core": "^7.18.9",
+        "@babel/preset-react": "^7.18.6",
+        "babel-loader": "^8.2.5",
+        "css-loader": "^6.7.1",
+        "html-webpack-plugin": "^5.5.0",
+        "jest": "^27.0.4",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.3",
+        "workbox-cli": "^6.1.5"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.9.3",
+        "@emotion/styled": "^11.9.3",
+        "@mui/icons-material": "^5.8.4",
+        "@mui/material": "^5.9.1",
+        "leaflet": "^1.7.1",
+        "leaflet.patchwork": "^0.9.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-github-btn": "^1.2.0"
+    }
 }

@@ -1,13 +1,11 @@
 import React from 'react';
-import {
-	Button,
-	DialogContentText,
-	FormGroup,
-	TextField,
-	Typography,
-	Select,
-	MenuItem
-} from "@material-ui/core";
+import Button from "@mui/material/Button";
+import DialogContentText from "@mui/material/DialogContentText";
+import FormGroup from "@mui/material/FormGroup";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 import GitHubButton from "react-github-btn";
 import takeScreenshot from "leaflet.patchwork";
