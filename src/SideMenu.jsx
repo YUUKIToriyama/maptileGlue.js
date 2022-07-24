@@ -1,42 +1,35 @@
 /* SideMenu.jsx */
 
 import React from 'react';
-import { makeStyles } from "@material-ui/core/styles";
-import {
-	Link,
-	Drawer,
-	Divider,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-	IconButton
-} from '@material-ui/core';
+import Link from '@mui/material/Link'
+import Drawer from '@mui/material/Drawer'
+import Divider from '@mui/material/Divider'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import IconButton from '@mui/material/IconButton'
 import {
 	ChevronLeft,
 	Help,
 	GitHub,
 	EmojiPeople
-} from '@material-ui/icons';
+} from '@mui/icons-material';
+import { styled } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme) => ({
-	drawer: {
-		width: drawerWidth,
-		flexShrink: 0,
-	},
-	drawerPaper: {
-		width: drawerWidth,
-	},
-	drawerHeader: {
-		display: 'flex',
-		alignItems: 'center',
-		padding: theme.spacing(0, 1),
-		// necessary for content to be below app bar
-		...theme.mixins.toolbar,
-		justifyContent: 'flex-end',
-	},
+const SideMenuRoot = styled(Drawer)(() => ({
+	width: drawerWidth,
+	flexShrink: 0,
+	anchor: 'left',
+}));
+const DrawerHeader = styled(IconButton)(({ theme }) => ({
+	display: "flex",
+	alignItems: "center",
+	padding: theme.spacing(0, 1),
+	justifyContent: "flex-end",
+	...theme.mixins.toolbar
 }));
 
 const SideMenu = (props) => {
@@ -45,22 +38,14 @@ const SideMenu = (props) => {
 		props.setMenuopen(props.menuopen);
 	}, [props.menuopen]);
 
-	const classes = useStyles();
 	return (
-		<Drawer
-			className={classes.drawer}
+		<SideMenuRoot
 			variant='persistent'
-			anchor='left'
 			open={props.menuopen}
-			classes={{
-				paper: classes.drawerPaper,
-			}}
 		>
-			<div className={classes.drawerHeader}>
-				<IconButton onClick={() => props.setMenuopen(false)}>
-					<ChevronLeft />
-				</IconButton>
-			</div>
+			<DrawerHeader onClick={() => props.setMenuopen(false)}>
+				<ChevronLeft />
+			</DrawerHeader>
 			<Divider />
 			<List>
 				<Link href='https://github.com/YUUKIToriyama/maptileGlue'>
@@ -86,7 +71,8 @@ const SideMenu = (props) => {
 					<ListItemText>Show Help</ListItemText>
 				</ListItem>
 			</List>
-		</Drawer>
+
+		</SideMenuRoot>
 	);
 }
 export default SideMenu;

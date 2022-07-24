@@ -56,7 +56,7 @@ class MapView extends React.Component {
 
 	render() {
 		return (
-			<div ref={this.mapRef} style={{ height: "90vh", width: "100%" }}></div>
+			<div ref={this.mapRef} style={{ height: "100vh", width: "100%" }}></div>
 		)
 	}
 }

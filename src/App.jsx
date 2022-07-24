@@ -1,43 +1,29 @@
 /* App.jsx */
 
 import React from "react";
-import {
-	CssBaseline,
-	Fab
-} from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
+import { Fab } from '@mui/material';
 import {
 	Edit
-} from '@material-ui/icons';
-import { makeStyles } from "@material-ui/core/styles";
-import {
-	ModalMenu
-} from 'materialui-component-collection';
+} from '@mui/icons-material';
+import { styled } from "@mui/material/styles";
+import { ModalMenu } from './ModalMenu';
 
 import MenuBar from "./MenuBar";
 import MapView from "./MapView";
 import ModalContent from './ModalContent';
 
-const useStyles = makeStyles(() => ({
-	actionButton: {
-		position: 'fixed',
-		zIndex: 1000, //Leafletよりも上に表示しなければならない
-		bottom: 70,
-		right: 50
-	}
+const ActionButton = styled(Fab)(({ theme }) => ({
+	color: theme.palette.primary,
+	position: "fixed",
+	zIndex: 1000, // Leafletよりも上に表示しなければならない
+	bottom: 70,
+	right: 50
 }));
 
 const App = () => {
 	const [tilelayer, setTilelayer] = React.useState("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png");
 	const [errorflag, setErrorflag] = React.useState(false);
-
-	const classes = useStyles();
-	const ActionButton = () => {
-		return (
-			<Fab color="primary" aria-label="open modal" className={classes.actionButton}>
-				<Edit />
-			</Fab>
-		)
-	}
 
 	return (
 		<div>
@@ -50,7 +36,11 @@ const App = () => {
 					closeButton: "閉じる"
 				}}
 				transition={true}
-				triggerElement={<ActionButton />}
+				triggerElement={
+					<ActionButton aria-label='open model'>
+						<Edit />
+					</ActionButton>
+				}
 			>
 				<ModalContent setTilelayer={setTilelayer} errorflag={errorflag} setErrorflag={setErrorflag} />
 			</ModalMenu>
